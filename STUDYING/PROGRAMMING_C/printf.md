@@ -17,3 +17,16 @@
   Serial.print(",");
 }
 ```
+上記コードでは、整数型でしか表示されない、
+
+以下のコードを見つけた
+```
+template<class T>
+inline print &operator <<(print &obj, T arg)
+{
+  obj.print(arg);
+  return obj;
+}
+```
+最終的に、このgithubを見つけた。
+- [Arduino Streaming Library](https://gist.github.com/fitzterra/3ac5a09f83e3b116d1c0bf53e2a357bd)
